@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Viz | GameGlobs</title>
+    <!-- Load Google font -->
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300' rel='stylesheet' type='text/css'>
+    <!-- Load favicon and other icons -->
+    <! -- Load favicon and other icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename = 'apple-touch-icon.png') }}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename = 'apple-touch-icon-57x57.png') }}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename = 'apple-touch-icon-72x72.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename = 'apple-touch-icon-76x76.png') }}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename = 'apple-touch-icon-114x114.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename = 'apple-touch-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename = 'apple-touch-icon-144x144.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'apple-touch-icon-152x152.png') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename = 'apple-touch-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename = 'apple-touch-icon-60x60.png') }}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename = 'apple-touch-icon-72x72.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename = 'apple-touch-icon-76x76.png') }}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename = 'apple-touch-icon-114x114.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename = 'apple-touch-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename = 'apple-touch-icon-144x144.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'apple-touch-icon-152x152.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'apple-touch-icon-180x180.png') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon-16x16.png') }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon-96x96.png') }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'android-icon-192x192.png') }}" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="{{ url_for('static', filename = 'smalltile.png') }}" />
+    <meta name="msapplication-square150x150logo" content="{{ url_for('static', filename = 'mediumtile.png') }}" />
+    <meta name="msapplication-wide310x150logo" content="{{ url_for('static', filename = 'widetile.png') }}" />
+    <meta name="msapplication-square310x310logo" content="{{ url_for('static', filename = 'largetile.png') }}" />
+
+    <!-- Load Bootstrap -->
+    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- There seems to be a problem when including both jquery and d3.js -->
+    <!-- Radio buttons will highlight the active choice, on "click" events don't register with d3.js -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="{{ url_for('static', filename='d3.v3.min.js') }}" charset="utf-8"></script><style type="text/css"></style>
+
+    <!-- Load jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!-- Load misc JS/CSS stuff -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ url_for('static', filename='circles.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='centroid_2d_coordinates_MMDS.json') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='gamesDataForAutocomplete.json') }}" charset="utf-8"></script>
+
+    <style>
+      body {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 48px;
+        line-height: 100%;
+        color: black;
+      }
+      .site_footer {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:link {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:visited {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:hover {
+        color: #D8CF00;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:active {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .btn {
+        background-color: #CCEEF7;
+        border-radius: 0 !important;
+        color: black;
+        border: 0 none;
+        font-size: 24px;
+        width: 80px;
+        line-height:150%;
+        font-weight: bold;
+      }
+      .btn:hover {
+        background-color: #D8CF00;
+        color: black;
+      }
+      .btn:focus {
+        background-color: #D8CF00;
+        color: black;
+      }
+      .btn:active {
+        background-color: #D8CF00;
+        color: black;
+      }
+      .btn:disabled {
+        background-color: #D8CF00;
+        color: black;
+      }
+      .goBack {
+        font-size: 20px;
+      }
+      .kValues {
+        <!--position:absolute;-->
+        <!--margin-left:-1000px;-->
+        <!--width:2000px;-->
+        <!--position: fixed;-->
+        <!--bottom:0;-->
+        left:50%;
+        margin-top: -2px;
+      }
+      .footer {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      div.footer a:link {
+        color: black;
+        text-decoration: none;
+      }
+      div.footer a:visited {
+        color: black;
+        text-decoration: none;
+      }
+      div.footer a:hover {
+        color: #D8CF00;
+        text-decoration: none;
+      }
+      div.footer a:active {
+        color: black;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+<body>
+    <div id="overlay_scroll"></div>
+    <div id="specialBox">
+    </div>
+    <center>
+    <div id="main_wrapper" class="main_wrapper_unhidden">
+        <!-- Header -->
+        <div class=goBack>
+          <a href='/gameglobs'>
+            <img border="0" alt="Go back" src={{ url_for('static', filename = 'gameglobs_logo.png') }} height="38">
+          </a>
+        </div>
+        <!-- Requires jQuery -->
+        <div class="searcher">
+                <input id="tags" type="text" placeholder="Enter a game's title here to highlight its cluster..." name="code" class="ui-autocomplete-input" autocomplete="off">
+            <script>
+                $(document).ready(function() {
+
+                    // find the cluster with the game in it
+                    function find_cluster(game_id) {
+                        for(index = 0; index < kvalues[kval].length; index++) {
+                            for(index_2 = 0; index_2 < kvalues[kval][index].games.length; index_2++) {
+                                if(game_id == kvalues[kval][index].games[index_2].id) {
+                                    return kvalues[kval][index].title;
+                                }
+                            }
+                        }
+                    }
+
+                    $(function() {
+                        $("#tags").autocomplete({
+                            maxResults: 10,
+                            source: function(request, response) {
+                                var results = $.ui.autocomplete.filter(games_list, request.term);
+                                response(results.slice(0, this.options.maxResults));
+                            },
+                            focus: function(event, ui) {
+                                // prevent autocomplete from updating the textbox
+                                //event.preventDefault();
+                                // manually update the textbox
+                                $(this).val(ui.item.label);
+                            },
+                            select: function(event, ui) {
+                                // prevent autocomplete from updating the textbox
+                                event.preventDefault();
+                                // manually update the textbox and hidden field
+                                var selectedGameID = ui.item.id;
+                                // zoom and center the selected cluster
+                                set_zoom(find_cluster(selectedGameID));
+                            }
+                        });
+                    });
+
+
+                    $("#tags").keypress(function(e) {
+                      if(e.keyCode == 13)
+                         {
+                             e.preventDefault();
+                             set_zoom(find_cluster(name_game));
+                         }
+                    });
+
+
+                });
+            </script>
+        </div>
+
+        <!-- Start the d3.js -->
+        <div class="content">
+        <script type="text/javascript">
+            $(document).ready(function() {
+                init(kvalues, {{ index_of_initial_k }});
+
+             });
+        </script>
+        </div>
+        <!-- Radio buttons for changing K-Values -->
+        <div class="kValues">
+            <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option1"> 2
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option2"> 3
+            </label>
+            <!-- COMMENTED OUT TO MAKE A ROUND 30 K VALUES, FOR SYMMETRY REASONS -->
+            <!--<label class="btn btn-primary">-->
+                <!--<input type="radio" name="options" id="option3"> 4-->
+            <!--</label>-->
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option4"> 5
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option5"> 10
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option6"> 20
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option7"> 30
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option8"> 40
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option9"> 50
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option10"> 60
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option11"> 70
+            </label>
+            <!--<br>-->
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option12"> 80
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option13"> 90
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option14"> 100
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option15"> 125
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option16"> 150
+            </label>
+            <br>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option17"> 175
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option18"> 200
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option19"> 250
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option20"> 300
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option21"> 400
+            </label>
+            <!--<br>-->
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option22"> 500
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option23"> 600
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option24"> 700
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option25"> 800
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option26"> 900
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option27"> 1000
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option28"> 1250
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option29"> 1500
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option30"> 2000
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option31"> 2500
+            </label>
+        </div>
+        <div class="footer">
+          <a href="/gameglobs/about">About</a>
+          &nbsp;&nbsp;&nbsp;
+          <a href="mailto:jor@soe.ucsc.edu?cc=ekaltman@soe.ucsc.edu" target="_top">Contact</a>
+          &nbsp;&nbsp;&nbsp;
+          <a href="/gameglobs/faq">FAQ</a>
+        </div>
+        </div>
+    </div>
+</span>
+</center>
+</body>
+</html>

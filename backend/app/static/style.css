@@ -1,0 +1,270 @@
+/* Make the entire thing represented by 100% of the browser page */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: black;
+}
+
+#overlay_scroll {
+    display: none;
+    z-index: 2;
+    background: #CCEEF7;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+#specialBox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    display: none;
+    position: relative;
+    z-index: 3;
+    margin: 20px auto 20px auto;
+    width: 700px;
+    height: 650px;
+    background: #000000;
+    overflow: auto;
+    overflow-y: scroll;
+    text-align: center;
+    line-height: 110%;
+    -moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	vertical-align: center;
+}
+
+div.specialBoxOldGold a:link {
+  color: white;
+}
+
+div.specialBoxOldGold a:hover {
+  color: #D8CF00;
+}
+
+div.specialBoxOldGold a:visited {
+  color: white;
+}
+
+div.specialBoxOldGold a:active {
+  color: white;
+}
+
+.specialBox li {
+  cursor: pointer;
+  cursor: hand;
+}
+
+#specialBoxOldGold {
+    font-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    display: none;
+    position: relative;
+    z-index: 3;
+    margin: 20px auto 20px auto;
+    width: 700px;
+    height: 650px;
+    background: #D8CF00;
+    overflow: auto;
+    overflow-y: scroll;
+    text-align: center;
+    line-height: 110%;
+    -moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	vertical-align: center;
+}
+
+div.specialBoxOldGold a {
+  color: black;
+}
+
+div.specialBoxOldGold a:link {
+  color: black;
+}
+
+div.specialBoxOldGold a:hover {
+  color: white;
+}
+
+div.specialBoxOldGold a:visited {
+  color: black;
+}
+
+div.specialBoxOldGold a:active {
+  color: black;
+}
+
+
+/* The d3 images should be centered */
+.content {
+    /*position: fixed;
+    left: calc(50% - 250px);
+    vertical-align:middle; */
+    display: block;
+    text-align: center;
+}
+
+svg {
+    /*position: fixed;*/
+    border: 1px solid #CCEEF7;
+    background-color: #CCEEF7;
+    text-align: center;
+}
+
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+.btn-group {
+    position: relative;
+    bottom: 10px;
+
+}
+
+.btn {
+    width: 3.2258064516129032258064516129032%;
+    font-size: 9.5px;
+}
+
+
+#overlay {
+    fill: none;
+    pointer-events: all;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    align: center;
+    text-align: center;
+}
+
+.searcher {
+	/*padding:5px;*/
+    margin: auto;
+    text-align: center;
+    font-size: 21px;
+    color: black;
+}
+
+.ui-helper-hidden-accessible div {
+    display: none;
+}
+
+.main_wrapper_unhidden {
+    display:block;
+}
+
+.main_wrapper_hidden {
+    display: none;
+}
+
+#tags.ui-autocomplete-input {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background-color: #CCEEF7;
+    border-color: #ccc;
+    border-color: white;
+    border-style: solid;
+    border-width: 0px;
+    width: 1186px;
+    margin: 0 auto;
+}
+
+input[type='text'] {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    width: 70%;
+    color: black;
+    font-weight: bold;
+  }
+  ui-autocomplete-input {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    width: 70%;
+    color: black;
+    font-weight: bold;
+  }
+  .ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: center;
+    display: none;
+    min-width: 160px;
+    /*max-width: 400px;*/
+    padding: 6px 0 0 -10px;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #D8CF00;
+    border-color: #ccc;
+    border-color: white;
+    border-style: solid;
+    border-width: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 0px;
+    *border-bottom-width: 0px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
+  .ui-state-hover, .ui-autocomplete li:hover {
+    color:white;
+    font-weight: bold;
+  }
+
+  .ui-menu .ui-menu-item {
+    background:#D8CF00;
+    height:44px;
+    font-size:24px;
+    color:black;
+    font-weight: bold;
+  }
+  .ui-helper-hidden-accessible {
+    display:none;
+    color: black;
+  }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    black;
+    font-weight: bold;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    black;
+    font-weight: bold;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    black;
+    font-weight: bold;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    black;
+    font-weight: bold;
+}
+
+li {
+  cursor: pointer;
+  cursor: hand;
+}
