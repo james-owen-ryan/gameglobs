@@ -267,7 +267,9 @@
     d3.select("#option5")
         .on("click.d3", function(d,i) {
             kval = 4;
-            reset_zoom()
+            formObject = document.forms['selectedKForm'];
+            formObject.elements["indexOfSelectedKValue"].value = kval;
+            formObject.submit();
         })
     d3.select("#option6")
         .on("click.d3", function(d,i) {
