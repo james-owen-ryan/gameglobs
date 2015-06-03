@@ -3,7 +3,7 @@
   <head>
     <title>Viz | GameGlobs</title>
     <!-- Load Google font -->
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
     <!-- Load favicon and other icons -->
     <! -- Load favicon and other icons -->
     <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon" />
@@ -67,6 +67,7 @@
         font-size: 48px;
         line-height: 100%;
         color: black;
+        font-weight: 300;
       }
       .site_footer {
         font-family: 'Josefin Sans', sans-serif;
@@ -139,7 +140,6 @@
       .footer {
         font-family: 'Josefin Sans', sans-serif;
         font-size: 24px;
-        font-weight: bold;
       }
       div.footer a:link {
         color: black;
@@ -337,11 +337,13 @@
             </label>
         </div>
         <div class="footer">
+          <b>
           <a href="/gameglobs/about">About</a>
           &nbsp;&nbsp;&nbsp;
           <a href="mailto:jor@soe.ucsc.edu?cc=ekaltman@soe.ucsc.edu" target="_top">Contact</a>
           &nbsp;&nbsp;&nbsp;
           <a href="/gameglobs/faq">FAQ</a>
+          </b>
         </div>
         </div>
     </div>
