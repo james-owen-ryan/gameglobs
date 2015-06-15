@@ -5,15 +5,34 @@
     <!-- Load Google font -->
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- Load favicon and other icons -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename = 'gamenet-favicon.ico') }}" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon.png') }}" />
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-57x57.png') }}" />
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-72x72.png') }}" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-76x76.png') }}" />
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-114x114.png') }}" />
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-120x120.png') }}" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-144x144.png') }}" />
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-152x152.png') }}" />
+    <! -- Load favicon and other icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename = 'apple-touch-icon.png') }}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename = 'apple-touch-icon-57x57.png') }}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename = 'apple-touch-icon-72x72.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename = 'apple-touch-icon-76x76.png') }}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename = 'apple-touch-icon-114x114.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename = 'apple-touch-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename = 'apple-touch-icon-144x144.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'apple-touch-icon-152x152.png') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename = 'apple-touch-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename = 'apple-touch-icon-60x60.png') }}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename = 'apple-touch-icon-72x72.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename = 'apple-touch-icon-76x76.png') }}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename = 'apple-touch-icon-114x114.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename = 'apple-touch-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename = 'apple-touch-icon-144x144.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'apple-touch-icon-152x152.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'apple-touch-icon-180x180.png') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon-16x16.png') }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon-96x96.png') }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'android-chrome-192x192.png') }}" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="{{ url_for('static', filename = 'smalltile.png') }}" />
+    <meta name="msapplication-square150x150logo" content="{{ url_for('static', filename = 'mediumtile.png') }}" />
+    <meta name="msapplication-wide310x150logo" content="{{ url_for('static', filename = 'widetile.png') }}" />
+    <meta name="msapplication-square310x310logo" content="{{ url_for('static', filename = 'largetile.png') }}" />
   <style>
   a:link {
     color: #D8CF00;
@@ -119,7 +138,7 @@
     <br>
     <div class="answer">GameGlobs includes 11,829 games. If the game you're looking for was released after mid-2014,
         then it will not be in the system (due to the its underlying model being constructed at that time). We
-        are planning to update GameNet to add in these recent games. Second, if your game does not have a Wikipedia
+        are planning to update GameGlobs to add in these recent games. Second, if your game does not have a Wikipedia
         article about it, or if its Wikipedia article is a stub, then it will not be included in the current version
         of GameGlobs. The model that currently underpins system was constructed by processing Wikipedia articles about
         games, as we explain below, and so only games with such articles are featured at this time.
