@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>FAQ | GameGlobs</title>
+    <!-- Load Google font -->
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- Load favicon and other icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'gamenet-favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon.png') }}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-57x57.png') }}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-72x72.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-76x76.png') }}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-114x114.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-144x144.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename = 'gamenet-apple-touch-icon-152x152.png') }}" />
+  <style>
+  a:link {
+    color: #CCEEF7;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #CCEEF7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #D8CF00;
+    text-decoration: none;
+  }
+  a:active {
+    color: #CCEEF7;
+    text-decoration: none;
+  }
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  .footer {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+  }
+  div.footer a:link {
+    color: black;
+    text-decoration: none;
+  }
+  div.footer a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  div.footer a:hover {
+    color: #FF5500;
+    text-decoration: none;
+  }
+  div.footer a:active {
+    color: black;
+    text-decoration: none;
+  }
+  .goBack {
+    font-size: 20px;
+  }
+  .header {
+    width: 50%;
+    font-size: 36pt;
+    font-weight: 300;
+    }
+  .faq {
+    width:60%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20pt;
+    font-weight: 300;
+    line-height: 117%;
+  }
+  .question {
+     font-size: 20pt;
+     font-weight: bold;
+   }
+  .answer {
+     font-size: 20pt;
+   }
+  </style>
+  </head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <center>
+  <!-- Display Gamenet logo as a link back to the home page -->
+  <div class=goBack>
+    <a href='/gamenet'>
+      <img border="0" alt="Go back" src={{ url_for('static', filename = 'gamenet_logo.png') }} height="30">
+    </a>
+  </div>
+  <!-- About text -->
+  <div class=faq>
+    <br><hr noshade="" color="black" ;="" size="1" width="78%"><br>
+    <div class="question">What is this?</div>
+    <br>
+    <div class="answer">GameGlobs is a visualization suite that can be used to discover new games, learn
+        about the videogame medium, or learn about the field of
+        <a href="https://en.wikipedia.org/?title=Machine_learning" target="_blank">machine learning</a>.
+        More specifically, it is a series of videogame clustering visualizations, where each clustering
+        is a partitioning of 11,829 games into discrete groups, called clusters. The tool
+        was built using techniques from machine learning, as well as
+        <a href="http://en.wikipedia.org/wiki/Natural_language_processing" target="_blank">natural language
+            processing</a>. We think it offers interesting comparisons to conventional ways of partitioning
+        games into groups, for instance in commercial game genre. GameGlobs is not currently optimized for
+        mobile viewing.
+    </div>
+    <br><br>
+    <div class="question">How do I use it?</div>
+    <br>
+    <div class="answer">Click one of the buttons to indicate which visualization you'd like to see first. After some
+        loading, this will take you to a new screen with your selected visualization on display. Here, you'll see
+        a number of circles of various sizes; these are the clusters for that visualization. Bigger clusters will
+        include more games, and you can click on any cluster to see which games it comprises. When doing this,
+        the games will be listed as hyperlinks to their entries in another tool we have created, called
+        <a href="http://gamecip-projects.soe.ucsc.edu/gamenet" target="_blank">GameNet</a>. When viewing a visualization,
+        you can zoom and pan using conventional mouse controls.
+    </div>
+    <br><br>
+    <div class="question">Why doesn't it include the game I want to start at?</div>
+    <br>
+    <div class="answer">GameGlobs includes 11,829 games. If the game you're looking for was released after mid-2014,
+        then it will not be in the system (due to the its underlying model being constructed at that time). We
+        are planning to update GameNet to add in these recent games. Second, if your game does not have a Wikipedia
+        article about it, or if its Wikipedia article is a stub, then it will not be included in the current version
+        of GameGlobs. The model that currently underpins system was constructed by processing Wikipedia articles about
+        games, as we explain below, and so only games with such articles are featured at this time.
+    </div>
+    <br><br>
+    <div class="question">Who made it?</div>
+    <br>
+    <div class="answer">UC Santa Cruz students Timothy Hong,
+        <a href="http://users.soe.ucsc.edu/~jor/" target="_blank">James Ryan</a>, and
+      <a href="http://erickaltman.com/" target="_blank">Eric Kaltman</a>. We made it as part of the larger
+        <a href="http://gamecip.soe.ucsc.edu/" target="_blank">
+      Game Metadata and Citation Project</a> (GAMECIP), a multi-year joint initiative between UC Santa Cruz
+        and Stanford that is funded by the
+            <a href="http://www.imls.gov/" target="_blank">
+            Institute of Museum and Library Services</a> (grant LG-06-13-0205-13).
+    </div>
+    <br><br>
+    <div class="question">How does it work?</div>
+    <br>
+    <div class="answer">We built GameGlobs by submitting Wikipedia articles about games to
+        a technique from natural language processing called latent semantic analysis (LSA).
+        LSA works from the premises that words that occur in similar contexts will tend to have
+        similar meanings and that texts that are composed of similar words will tend to be
+        topically similar. By the technique, words get attributed computable representations that
+        are determined by the contexts in which they appear (in our case, the Wikipedia articles) and
+        the contexts themselves (those Wikipedia articles) likewise get attributed computable representations
+        according to which words appear in them. The cool thing about LSA is that it may be able to
+        infer that two words that
+        do not appear together in any context (perhaps dialectal variants that denote the same thing,
+        like 'gas' and 'petrol') are in fact highly semantically related. By the same token, it may infer
+        the semantic relatedness of two contexts that have no terms in common. This ability to learn
+        global associations from local co-occurrences is the achievement of LSA and what led to it becoming
+        one of the major natural language processing techniques of the last twenty years. For this project, we extracted 11,829
+        Wikipedia articles that describe individual games and submitted these to LSA. By taking the computable
+        representation that LSA gave to the games' Wikipedia articles and using them as a way of representing the
+        games themselves, we can automatically determine how related any game is to any other game among the
+        11,829 included in our model. Having this ability, we proceeded to cluster games using the classic
+        <i>k</i>-means algorithm. For more information about GameGlobs, see
+        <a href="https://users.soe.ucsc.edu/~jor/publications/ryanLargeScaleVisualizationsOf12000Games.pdf" target="_blank">
+            this short paper</a> that accompanied a demo of the tool at a recent academic conference.
+    </div>
+    <br><br>
+    <div class="question">Can you say more about LSA and your model?</div>
+    <br>
+    <div class="answer">
+        From a corpus of text, a co-occurrence matrix of its words and documents (the
+        individual texts that make up the corpus) is built; this matrix specifies
+        which words occurred in which documents (and thereby which documents words occurred in). The columns and
+        rows in this matrix can be thought of as vectors that represent the meanings, in an approximate sense,
+        of the words and documents that they correspond to; this is called a vector space model of semantics.
+        LSA is an example of such a model, but its hallmark is that it reduces the dimensionality of these vectors
+        by a matrix-factorization algorithm called singular value decomposition. Remarkably,
+        doing this allows the model to, as we've said above, infer semantic associations that are not encoded in the full
+        co-occurrence matrix. Having an LSA model, one can easily calculate how semantically related any of its
+        documents are by taking the cosine between their LSA vectors. In corpora in which each document pertains
+        to a specific individual concept, such as a corpus comprising encyclopedia entries, these relatedness scores
+        can reasonably be utilized as a measure of the relatedness of the concepts themselves. Crucially, we
+        relied on this notion in training our LSA model on the corpus comprising Wikipedia articles for
+        11,829 videogames, which we mentioned above. By this model,
+        we can quantify how related any two of these games are by taking the cosine between their LSA vectors.
+        If this isn't detailed enough, check out
+        <a href="https://users.soe.ucsc.edu/~jor/publications/ryanGamesStudiesUsingNLP.pdf" target="_blank">
+            this conference paper</a> in which we explain our implementation in greater depth.
+        Feel free to <a href="mailto:jor@soe.ucsc.edu?cc=ekaltman@soe.ucsc.edu" target="_top">shoot us an email</a> too.
+    </div>
+    <br><br>
+    <div class="question">What languages and tools did you use to build it?</div>
+    <br>
+    <div class="answer">Python, gensim, scikit-learn, Flask, JavaScript, jQuery, D3.
+    </div>
+    <br><hr noshade="" color="black" ;="" size="1" width="78%"><br>
+  </div>
+  <br><br>
+  <div class="footer">
+    <a href="/gamenet/about">About</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="mailto:jor@soe.ucsc.edu?cc=ekaltman@soe.ucsc.edu" target="_top">Contact</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="/gamenet/faq"><font color="#FF5500">FAQ</font></a>
+  </div>
+  <br><br>
+  </center>
+</html>
