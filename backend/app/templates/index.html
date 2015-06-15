@@ -118,20 +118,17 @@
       <form name="selectedKForm" method="post" action="/viz">
     <input type="hidden" name="indexOfSelectedKValue" value="0">
   </form>
+  <!-- Display prompt text -->
+  <div class=prompt>
+    Welcome to GameGlobs.<br><br>
+  </div>
   <!-- Display GameGlobs logo [as link back to this page, to emphasize this affordance] -->
   <a href='/gameglobs'>
-    <img border="0" alt="Go back" src={{ url_for('static', filename = 'gameglobs_logo.png') }} height="120px">
+    <img border="0" alt="Go back" src={{ url_for('static', filename = 'gameglobs_logo.png') }} height="150px">
   </a>
   <br><br>
   <!-- Display prompt text -->
   <div class=prompt id="prompt">
-    <!--{% if entered_unknown_game %}-->
-      <!--I'm sorry, but that game is not included<br>in GameNet.<br><br>Please enter a new title.<br><br>-->
-    <!--{% else %}-->
-      <!--GameNet is a hypertext network in which related videogames are linked.<br><br>Which game do you want to start at?<br><br>-->
-    <!--{% endif %}-->
-    GameGlobs is a series of videogame<br>clustering visualizations.
-    <br><br>
     How many game clusters would you like to see first?
     <br><br>
     </div>
