@@ -10,26 +10,26 @@ def home():
     return render_template('index.html')
 
 
-@app.route('gameglobs/about')
+@app.route('/gameglobs/about')
 def about():
     """Render the about page."""
     return render_template('about.html')
 
 
-@app.route('gameglobs/faq')
+@app.route('/gameglobs/faq')
 def faq():
     """Render the FAQ page."""
     return render_template('faq.html')
 
 
-@app.route('gameglobs/viz', methods=['POST'])
+@app.route('/gameglobs/viz', methods=['POST'])
 def viz():
     """Render the actual clustering visualization."""
     index_of_initial_k = request.form['indexOfSelectedKValue']
     return render_template('viz.html', index_of_initial_k=index_of_initial_k)
 
 
-@app.route('gameglobs/viz')
+@app.route('/gameglobs/viz')
 def viz_without_pos():
     """In case someone tries to directly visit the viz URL, render the actual clustering visualization with k=2."""
     index_of_initial_k = 2
