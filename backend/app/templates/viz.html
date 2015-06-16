@@ -33,7 +33,6 @@
     <meta name="msapplication-square150x150logo" content="{{ url_for('static', filename = 'mediumtile.png') }}" />
     <meta name="msapplication-wide310x150logo" content="{{ url_for('static', filename = 'widetile.png') }}" />
     <meta name="msapplication-square310x310logo" content="{{ url_for('static', filename = 'largetile.png') }}" />
-
     <!-- Load Bootstrap -->
     <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
 
@@ -58,7 +57,6 @@
     <!-- Load misc JS/CSS stuff -->
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ url_for('static', filename='circles.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='centroid_2d_coordinates_MMDS.json') }}" charset="utf-8"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='gamesDataForAutocomplete.json') }}" charset="utf-8"></script>
 
     <style>
@@ -160,6 +158,13 @@
     </style>
   </head>
 <body>
+    <!-- Display indication that the viz is loading -->
+    <center>
+    <div id="loading"><br><br><br>Loading...</div>
+    </center>
+    <script type="text/javascript" src="{{ url_for('static', filename='centroid_2d_coordinates_MMDS.json') }}" charset="utf-8"></script>
+    <!-- Remove indication that the viz is loading -->
+    <script>document.getElementById("loading").innerHTML = ''</script>
     <div id="overlay_scroll"></div>
     <div id="specialBox">
     </div>
